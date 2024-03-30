@@ -15,13 +15,13 @@ The dataset underwent pre-processing, where categorical variables were converted
 ### Model Development
 Using the ranger package, I applied the Random Forest algorithm to the training data. I chose Random Forest for its efficacy in handling a large number of input variables and its robustness to overfitting. The model was initially set up with 500 trees, and then calculated variable importance to understand the factors most predictive of churn.
 
-<img src="https://github.com/andinetM/Employee-Churn-Prediction-Model-/blob/main/Var_Importance_Rplot01.png" align="center" height="500" width="500"/>
+<img src="https://github.com/andinetM/Employee-Churn-Prediction-Model-/blob/main/Plots/Var_Importance_Rplot01.png" align="center" height="500" width="500"/>
 
  
 ### Model Tuning
 Recognizing the need for model optimization, I conducted a Hyperparameter tuning exercise for the 'mtry' parameter, which represents the number of variables randomly sampled as candidates at each split. Then explored a range of values and determined that mtry = 5 yielded the highest Area Under the Curve (0.8157) metric, which is considered good and indicates the model has a strong discriminative ability.
 
-<img src="https://github.com/andinetM/Employee-Churn-Prediction-Model-/blob/main/ROC_plot_Rplot.png" align="center" height="500" width="500"/>
+<img src="https://github.com/andinetM/Employee-Churn-Prediction-Model-/blob/main/Plots/ROC_plot_Rplot.png" align="center" height="500" width="500"/>
  
 ### Model Evaluation
 I evaluated the model using a custom decision threshold of 0.3, rather than the default 0.5, to increase sensitivity to the minority class (Yes). This adjustment was critical in addressing the imbalance in our dataset. The model's accuracy and ability to predict churn were summarized in a confusion matrix.
